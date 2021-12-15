@@ -1,20 +1,21 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
-import InfoBox from './InfoBox'
+import styled from 'styled-components';
 
 
 export default function Header({title}) {
     return (
-        <>
+        <Wrapper>
             <h1>{title}</h1>
-            
-            <Grid>
-                <Row className="show-grid">
-                    <InfoBox title="Daily" number="117" />
-                    <InfoBox title="Month" number="1170" />
-                    <InfoBox title="Total" number="11700" />
-                </Row>
-            </Grid>
-        </>
+            <p>The official UK government website for data and insights on coronavirus (COVID-19).</p>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+    background: #000;
+    width: 100%;
+    margin-bottom : 20px;
+    padding: 15px 25px;
+    color: #FFF;
+`;
+
