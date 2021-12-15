@@ -4,11 +4,11 @@ import { Row, Col } from 'react-bootstrap'
 import InfoBox from '../components/InfoBox'
 import CountrySelector from '../components/CountrySelector'
 
-export default function Cases() {
+export default function Deaths() {
     return (
         <Container>
             <Row>
-                <h2>Cases</h2>
+                <h2>Deaths</h2>
             </Row>
             <hr />
             <Row>
