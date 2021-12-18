@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
-import covid from './covidReducer'
+import worldCountries from './worldCountries'
+import countryDetails from './countryDetails'
+import appInfos from './appInfos'
+import vaccinationDetails from './vaccinationDetails'
 
 export default combineReducers({
-  covid: covid
+  app : appInfos,
+  worldCountries,
+  countryDetails,
+  vaccinationDetails,
 })

@@ -1,28 +1,27 @@
-import {GET_COUNTRIES_REQUEST, GET_COUNTRIES_SUCCESS, GET_COUNTRIES_ERROR} from '../types'
+import {GET_WORLD_COUNTRIES_REQUEST, GET_WORLD_COUNTRIES_SUCCESS, GET_WORLD_COUNTRIES_ERROR} from '../types'
  
 const initialState = {
-    countries : [],
-    error : ''
+    countries : []
 }
 
 export default function (state = initialState, action){
 
     switch(action.type){
 
-        case GET_COUNTRIES_REQUEST:
+        case GET_WORLD_COUNTRIES_REQUEST:
             return {
                 ...state,
                 loading : true
             }
 
-        case GET_COUNTRIES_SUCCESS:
+        case GET_WORLD_COUNTRIES_SUCCESS:
             return {
                 ...state,
                 countries : action.payload,
                 loading : false
             }
 
-        case GET_COUNTRIES_ERROR:
+        case GET_WORLD_COUNTRIES_ERROR:
             return {
                 ...state,
                 error : action.payload,
