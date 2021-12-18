@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import { Row, Col } from 'react-bootstrap'
 import InfoBox from '../components/InfoBox'
-import CountrySelector from '../components/CountrySelector'
+import { changePageTitle } from '../redux/actions/appInfos'
 
 
 export default function Home() {
+    
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(changePageTitle('Daily update'))
+    }, [])
+
     return (
         <Container>
-            <Row>
-                <h2>Daily update</h2>
-            </Row>
-            <hr />
-            <Row>
-                <CountrySelector />
-            </Row>
-            <hr/>
             <Row>
                 <Col xs={6} md={4}>
                     <InfoBox title="Daily" number="117" />
