@@ -19,3 +19,8 @@ const Wrapper = styled.div`
     color: #FFF;
 `;
 
+
+//             <Row>
+{/* <h2>Deaths</h2>
+</Row>
+<hr /> */}

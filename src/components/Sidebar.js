@@ -9,20 +9,20 @@ export default function Sidebar() {
     return (
         <>
             <Nav style={{height:'100vh'}} className="col-md-12 d-none d-md-block bg-light sidebar text-left"
-                activeKey="/home" onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+                activeKey="/home" 
             >
             <div className="sidebar-sticky"></div>
                 <Nav.Item>
                     <LinkElem exact  to="/">Daily update</LinkElem >
                 </Nav.Item>
                 <Nav.Item>
-                    <LinkElem to="/c/cases">Cases</LinkElem >
+                    <LinkElem to="/cases">Cases</LinkElem >
                 </Nav.Item>
                 <Nav.Item>
-                    <LinkElem to="/d/deaths">Deaths</LinkElem >
+                    <LinkElem to="/deaths">Deaths</LinkElem >
                 </Nav.Item>
                 <Nav.Item>
-                    <LinkElem to="/v/vaccinations">Vaccinations</LinkElem >
+                    <LinkElem to="/vaccinations">Vaccinations</LinkElem >
                 </Nav.Item>
                 
             </Nav>

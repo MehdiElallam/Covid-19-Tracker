@@ -11,9 +11,9 @@ export default function RoutesList() {
     return (
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/:type/cases" element={<Cases />} />
-            <Route path="/:type/vaccinations" element={<Vaccinations/>} />
-            <Route path="/:type/deaths" element={<Deaths/>} />
+            <Route path="/cases" element={<Cases />} />
+            <Route path="/vaccinations" element={<Vaccinations/>} />
+            <Route path="/deaths" element={<Deaths/>} />
             <Route element={<PageNotFound />} />
         </Routes>
     )
