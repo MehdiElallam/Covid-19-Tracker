@@ -1,2 +1,7 @@
+import axios from "axios"
 
-export const url = "https://disease.sh/v3/covid-19";
+
+export const instance = axios.create({
+    baseURL : "https://disease.sh/v3/covid-19",
+});
+
