@@ -1,4 +1,5 @@
 import {
+    DEFAULT_COUNTRY,
     GET_COUNTRY_DATA_REQUEST, 
     GET_COUNTRY_DATA_SUCCESS, 
     GET_COUNTRY_DATA_ERROR,
@@ -29,7 +30,7 @@ export const fetchCountryDataError = (error) => {
     }
 }
 
-export const fetchCountryData = (country) => {
+export const fetchCountryData = (country=DEFAULT_COUNTRY) => {
     
     return async(dispatch) => {
         
@@ -67,7 +68,7 @@ export const fetchCountryHistoricalError = (error) => {
     }
 }
 
-export const fetchCountryHistorical = (country) => {
+export const fetchCountryHistorical = (country=DEFAULT_COUNTRY) => {
     
     return async(dispatch) => {
         

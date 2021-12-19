@@ -1,4 +1,5 @@
 import {
+    DEFAULT_COUNTRY,
     GET_COUNTRY_VACCINATION_REQUEST, 
     GET_COUNTRY_VACCINATION_SUCCESS, 
     GET_COUNTRY_VACCINATION_ERROR,
@@ -27,7 +28,7 @@ export const fetchCountryVaccinationError = (error) => {
     }
 }
 
-export const fetchCountryVaccination = (country) => {
+export const fetchCountryVaccination = (country=DEFAULT_COUNTRY) => {
     
     return async(dispatch) => {
         
