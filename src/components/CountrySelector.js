@@ -19,8 +19,8 @@ export default function CountrySelector() {
 
     useEffect(() => {
         dispatch(fetchWorldCountries());
-        dispatch(fetchCountryData('UK'));
-        dispatch(fetchCountryVaccination('UK'))
+        dispatch(fetchCountryData());
+        dispatch(fetchCountryVaccination())
 
     }, [dispatch])
 
@@ -40,7 +40,7 @@ export default function CountrySelector() {
     }
 
     return (
-        <>
+        <div className='counter-selector-container'>
             <Row>
                 <h2>{app.infos.title}</h2>
             </Row>
@@ -56,6 +56,6 @@ export default function CountrySelector() {
                 </Col>
                 
             </Row>
-        </>
+        </div>
     )
 }

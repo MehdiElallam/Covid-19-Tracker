@@ -18,9 +18,3 @@ const Wrapper = styled.div`
     padding: 15px 25px;
     color: #FFF;
 `;
-
-
-//             <Row>
-{/* <h2>Deaths</h2>
-</Row>
-<hr /> */}

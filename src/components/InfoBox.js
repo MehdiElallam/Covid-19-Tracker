@@ -1,13 +1,13 @@
 import React from 'react'
-import { Col } from 'react-bootstrap'
 import styled from 'styled-components';
 
 
-export default function InfoBox({title, number}) {
+export default function InfoBox({title, number, pourcentage}) {
     return (
         <Card className='card'>
             <H5>{title}</H5>
             <Small>{number}</Small>
+            {pourcentage && <Small>{number}</Small>}
         </Card>
     )
 }
