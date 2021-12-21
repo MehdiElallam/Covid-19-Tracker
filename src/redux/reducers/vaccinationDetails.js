@@ -6,7 +6,8 @@ import {
 
 const initialState = {
     vaccination : {},
-    loading : true
+    loading : true,
+    error : ""
 }
 
 export default function (state = initialState, action){

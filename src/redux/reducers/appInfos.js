@@ -2,7 +2,7 @@ import {GET_PAGE_TITLE } from '../types'
  
 const initialState = {
     infos : {
-        title : 'Daily update'
+        title : 'Home'
     }
 }
 
