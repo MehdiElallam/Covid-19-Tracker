@@ -13,7 +13,6 @@ export default function CountrySelector() {
     const worldCountries = useSelector(state => state.worldCountries)
     const app = useSelector(state => state.app)
     const [defaultCountry, setdefaultCountry] = useState('UK')
-    const params = useParams();
 
     useEffect(() => {
         dispatch(fetchWorldCountries());
