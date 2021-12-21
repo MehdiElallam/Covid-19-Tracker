@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container'
 import { Row, Col } from 'react-bootstrap'
 import InfoBox from '../components/InfoBox'
 import { changePageTitle } from '../redux/actions/appInfos'
-import { fetchCountryData } from "../redux/actions/countryDetails"
 
 
 export default function Cases() {

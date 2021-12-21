@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto'
-import { Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import helpers from '../utils/helpers'
 
 export default function LineGraph(props) {
@@ -18,6 +18,7 @@ export default function LineGraph(props) {
   )
 
   useEffect(() => {
+      
       props.vaccination && setChartData({
         labels: helpers.monthList(),
         datasets: [
@@ -27,7 +28,7 @@ export default function LineGraph(props) {
         ]
       })
   
-  }, [chartData])
+  }, [props.vaccination])
   
 
     return (
@@ -52,7 +53,7 @@ const DoseData = (data, dose) => {
       let thisMonth = helpers.dateByMonth(index);
       let firstDay = helpers.getFirstLastDay(thisMonth).firstDay
       let lastDay = index === currentMonth ? currentDate : helpers.getFirstLastDay(thisMonth).lastDay
-      let Dose = dose == 1 ? (data[lastDay] - data[firstDay] ) / 2.5 : dose == 2 ? (data[lastDay] - data[firstDay] ) / 3 : (data[lastDay] - data[firstDay] ) / 6
+      let Dose = dose === 1 ? (data[lastDay] - data[firstDay] ) / 2.5 : dose === 2 ? (data[lastDay] - data[firstDay] ) / 3 : (data[lastDay] - data[firstDay] ) / 6
       
       graphData.push(Dose)
       

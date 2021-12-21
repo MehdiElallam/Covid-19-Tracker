@@ -7,8 +7,6 @@ import { fetchCountryData } from "../redux/actions/countryDetails"
 import { fetchCountryHistorical } from "../redux/actions/countryDetails"
 import { fetchCountryVaccination } from "../redux/actions/countryVaccination"
 
-import { useParams } from 'react-router-dom'
-
 export default function CountrySelector() {
 
     const dispatch = useDispatch()

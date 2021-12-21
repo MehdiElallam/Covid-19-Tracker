@@ -24,7 +24,7 @@ export default function Home() {
             setRecovered(country.total.recovered)
             setTests(country.total.tests)
         }
-    }, [country])
+    }, [country, countryLoading])
 
     return (
         <Container>
