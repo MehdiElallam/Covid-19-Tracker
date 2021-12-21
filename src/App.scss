@@ -1,4 +1,15 @@
 
-.counter-selector-container {
-  background-color: red;
+$main-color : #f8f9fa;
+$border-color: rgb(226, 226, 226);
+
+body {
+  background-color: $main-color;
+  
+  .sidebar {
+    height : 100vh;
+    border-right: 1px solid $border-color;
+  }
 }
+
+
+// WE CAN USE NESTING AND MIXING :

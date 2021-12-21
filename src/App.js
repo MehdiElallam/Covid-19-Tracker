@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import './App.scss'
-import { useSelector, useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Container, Row, Col } from 'react-bootstrap'
@@ -22,7 +22,9 @@ function App() {
     <Router>
         <Header title="Covid-19 Tracker" />
           <Container style={{
-            maxWidth:'98%'
+            maxWidth:'98%',
+            padding : 0,
+            margin : 0
           }}>
               
               <Row>
