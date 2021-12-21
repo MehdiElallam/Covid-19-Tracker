@@ -7,17 +7,19 @@ import { changePageTitle } from '../redux/actions/appInfos'
 
 export default function Deaths() {
 
-    const countryDetails = useSelector(state => state.countryDetails)
+    const {country, countryLoading} = useSelector(state => state.countryDetails)
     const [dailyDeaths, setDailyDeaths] = useState(0)
     const [totalDeaths, setTotalDeaths] = useState(0)
     const dispatch = useDispatch();
+    
+    dispatch(changePageTitle('Deaths'))
 
     useEffect(() => {
-        
-        dispatch(changePageTitle('Deaths'))
-        !countryDetails.countryLoading && setDailyDeaths(countryDetails.country.total.todayDeaths)
-        !countryDetails.countryLoading && setTotalDeaths(countryDetails.country.total.deaths)
-    }, [countryDetails])
+        if(!countryLoading){
+            setDailyDeaths(country.total.todayDeaths)
+            setTotalDeaths(country.total.deaths)
+        }
+    }, [country,countryLoading])
 
 
     return (
