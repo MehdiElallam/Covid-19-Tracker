@@ -23,11 +23,12 @@ function App() {
         <Header title="Covid-19 Tracker" />
           <Container style={{
             maxWidth:'98%',
-            padding : 0,
+            padding : '20px',
             margin : 0
           }}>
               
               <Row>
+
                   <Col xs={12} md={3}>
                     <Sidebar />
                   </Col>

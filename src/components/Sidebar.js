@@ -8,18 +8,18 @@ import styled from 'styled-components';
 export default function Sidebar() {
     return (
         <>
-            <Nav className="col-md-12 d-none d-md-block bg-light sidebar text-left">
+            <Nav className="col-md-12 d-md-block bg-light flex-sm-column text-left">
             <div className="sidebar-sticky"></div>
-                <Nav.Item>
+                <Nav.Item className="col-xs-3">
                     <LinkElem to="/">Daily update</LinkElem >
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item className="col-xs-3">
                     <LinkElem to="/vaccinations">Vaccinations</LinkElem >
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item className="col-xs-3">
                     <LinkElem to="/cases">Cases</LinkElem >
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item className="col-xs-3">
                     <LinkElem to="/deaths">Deaths</LinkElem >
                 </Nav.Item>
                 
