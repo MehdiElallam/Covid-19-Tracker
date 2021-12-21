@@ -8,12 +8,13 @@ import styled from 'styled-components';
 export default function Sidebar() {
     return (
         <>
-            <Nav style={{height:'100vh'}} className="col-md-12 d-none d-md-block bg-light sidebar text-left"
-                activeKey="/home" 
-            >
+            <Nav className="col-md-12 d-none d-md-block bg-light sidebar text-left">
             <div className="sidebar-sticky"></div>
                 <Nav.Item>
-                    <LinkElem exact  to="/">Daily update</LinkElem >
+                    <LinkElem to="/">Daily update</LinkElem >
+                </Nav.Item>
+                <Nav.Item>
+                    <LinkElem to="/vaccinations">Vaccinations</LinkElem >
                 </Nav.Item>
                 <Nav.Item>
                     <LinkElem to="/cases">Cases</LinkElem >
@@ -21,9 +22,7 @@ export default function Sidebar() {
                 <Nav.Item>
                     <LinkElem to="/deaths">Deaths</LinkElem >
                 </Nav.Item>
-                <Nav.Item>
-                    <LinkElem to="/vaccinations">Vaccinations</LinkElem >
-                </Nav.Item>
+                
                 
             </Nav>
         </>

@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 
 export default function Header({title}) {
+    
     return (
         <Wrapper>
             <h1>{title}</h1>
-            <p>The official UK government website for data and insights on coronavirus (COVID-19).</p>
+            <p>Demo web application for data and insights on coronavirus (COVID-19) created by MEHDI EL</p>
         </Wrapper>
     )
 }

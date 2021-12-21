@@ -2,12 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 
 
-export default function InfoBox({title, number, pourcentage}) {
+export default function InfoBox({title, number}) {
     return (
         <Card className='card'>
             <H5>{title}</H5>
             <Small>{number}</Small>
-            {pourcentage && <Small>{number}</Small>}
         </Card>
     )
 }

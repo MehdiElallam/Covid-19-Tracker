@@ -21,8 +21,7 @@ export default function CountrySelector() {
         dispatch(fetchWorldCountries());
         dispatch(fetchCountryData());
         dispatch(fetchCountryVaccination())
-
-    }, [dispatch])
+    }, [])
 
     const countriesList = worldCountries.loading ? <option>Loading...</option> : worldCountries.countries.map((c,key)=> {
                 
