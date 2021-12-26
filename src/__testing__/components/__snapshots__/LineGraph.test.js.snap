@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineGraph should render correctly with no props 1`] = `ShallowWrapper {}`;
+
+exports[`Rendring LineGraph component LineGraph should render correctly with no props 1`] = `ShallowWrapper {}`;
+
+exports[`Rendring LineGraph component LineGraph should render correctly with vaccination props equal to empty object 1`] = `ShallowWrapper {}`;

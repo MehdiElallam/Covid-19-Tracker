@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendring Cases page should render with given state from Redux store 1`] = `ShallowWrapper {}`;
+
+exports[`Rendring Cases page should render with given state from mocked redux store 1`] = `ShallowWrapper {}`;
