@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react'
-import './App.scss'
+// import './App.scss'
 import {useDispatch } from 'react-redux'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -26,9 +26,7 @@ function App() {
             padding : '20px',
             margin : 0
           }}>
-              
               <Row>
-
                   <Col xs={12} md={3}>
                     <Sidebar />
                   </Col>

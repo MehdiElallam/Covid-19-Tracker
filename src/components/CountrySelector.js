@@ -46,7 +46,7 @@ export default function CountrySelector() {
                     <Form.Label htmlFor="country"><b>{app.infos.title} in :</b></Form.Label>
                 </Col>
                 <Col xs={6} md={4}>
-                    <Form.Select value={defaultCountry} onChange={fetchCountryDetails} aria-label="Country">
+                    <Form.Select id="countries__list" value={defaultCountry} onChange={fetchCountryDetails} aria-label="Country">
                         {countriesList}
                     </Form.Select>
                 </Col>
