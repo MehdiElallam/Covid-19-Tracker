@@ -73,14 +73,14 @@ export const fetchCountryHistorical = (country=DEFAULT_COUNTRY) => {
     return async(dispatch) => {
         
         dispatch(fetchCountryHistoricalRequest)
+
         try {
             const countryHistorical = await instance.get(`/historical/${country}?lastdays=365`)
             dispatch(fetchCountryHistoricalSuccess(countryHistorical.data))
         }
         catch(error) {
             
-            const errorMsg = error.message
-            dispatch(fetchCountryHistoricalError(errorMsg))
+            dispatch(fetchCountryHistoricalError(error))
         }
     }
     

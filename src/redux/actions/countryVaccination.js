@@ -38,7 +38,7 @@ export const fetchCountryVaccination = (country=DEFAULT_COUNTRY) => {
             dispatch(fetchCountryVaccinationSuccess(countryVaccination.data))
         }
         catch(error){
-            const errorMsg = error.message
+            const errorMsg = error
             dispatch(fetchCountryVaccinationError(errorMsg))
         }
     }
