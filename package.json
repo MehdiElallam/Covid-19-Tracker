@@ -60,6 +60,9 @@
   "jest": {
     "setupFilesAfterEnv": [
       "./src/setupTests.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   }
 }
