@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react'
-// import './App.scss'
+import './App.scss'
 import {useDispatch } from 'react-redux'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
