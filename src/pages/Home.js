@@ -8,8 +8,9 @@ import { changePageTitle } from '../redux/actions/appInfos'
 
 export default function Home() {
     
-    const { country, countryLoading } = useSelector(state => state.countryDetails)
     const dispatch = useDispatch();
+
+    const { country, countryLoading } = useSelector(state => state.countryDetails)
     const [Deaths, setDeaths] = useState(0)
     const [activeCases, setActiveCases] = useState(0)
     const [recovered, setRecovered] = useState(0)
@@ -24,7 +25,7 @@ export default function Home() {
             setRecovered(country.total.recovered)
             setTests(country.total.tests)
         }
-    }, [country, countryLoading])
+    }, [country])
 
     return (
         <Container>

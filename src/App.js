@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react'
 import './App.scss'
-import {useDispatch } from 'react-redux'
+import {useDispatch, useSelector } from 'react-redux'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import { Container, Row, Col } from 'react-bootstrap'
@@ -13,8 +13,11 @@ import { fetchCountryHistorical } from "./redux/actions/countryDetails"
 function App() {
 
   const dispatch = useDispatch();
+  const {countryCode} = useSelector(state => state.app.infos)
+
+  
   useEffect(() => {
-      dispatch(fetchCountryHistorical());
+      dispatch(fetchCountryHistorical(countryCode));
   }, [])
 
 

@@ -10,17 +10,17 @@ export default function Vaccinations() {
 
     const dispatch = useDispatch();
     const vaccinationDetails = useSelector(state => state.vaccinationDetails)    
-    const countryDetails = useSelector(state => state.countryDetails)
     const [vaccination, setVaccination] = useState({})
     const [firstDose, setFirstDose] = useState(0)
     const [secondDose, setSecondDose] = useState(0)
     const [thirddDose, setThirddDose] = useState(0)
-    const [countryPopulation, setCountryPopulation] = useState()
     const [currentDate] = useState(() => helpers.currentDate())
     
     
     useEffect(() => {
+        
         dispatch(changePageTitle('Vaccinations'))
+        
         if(!vaccinationDetails.loading){
             setVaccination(vaccinationDetails.vaccination.timeline)
             setVaccination(vaccinationDetails.vaccination.timeline)
@@ -28,11 +28,13 @@ export default function Vaccinations() {
             setSecondDose(parseInt(vaccinationDetails.vaccination.timeline[currentDate] / 3 ))
             setThirddDose(parseInt(vaccinationDetails.vaccination.timeline[currentDate] / 6))
         }
-        !countryDetails.countryLoading && setCountryPopulation(countryDetails.country.total.population)
 
-    }, [vaccinationDetails])
+    }, [vaccinationDetails.vaccination])
+
 
     return (
+        
+        vaccinationDetails.loading ? <p className="text-center">Loading...</p> :
         <>
             <Row>
                 <Col xs={6} md={4}>
@@ -47,7 +49,7 @@ export default function Vaccinations() {
             </Row>
             <hr />
             <Row>
-                <LineGraph title='Vaccinations Graph' vaccination={vaccinationDetails.vaccination.timeline}  />
+                <LineGraph title='Vaccinations Graph' vaccination={vaccination}  />
             </Row>
         </>
     )

@@ -12,14 +12,14 @@ export default function Deaths() {
     const [totalDeaths, setTotalDeaths] = useState(0)
     const dispatch = useDispatch();
     
-    dispatch(changePageTitle('Deaths'))
 
     useEffect(() => {
+        dispatch(changePageTitle('Deaths'))
         if(!countryLoading){
             setDailyDeaths(country.total.todayDeaths)
             setTotalDeaths(country.total.deaths)
         }
-    }, [country,countryLoading])
+    }, [country])
 
 
     return (

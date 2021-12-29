@@ -1,4 +1,4 @@
-export const DEFAULT_COUNTRY = 'UK';
+export const DEFAULT_COUNTRY = 'DEFAULT_COUNTRY';
 
 export const GET_PAGE_TITLE = "GET_PAGE_TITLE"
 

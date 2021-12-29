@@ -1,8 +1,9 @@
-import {GET_PAGE_TITLE } from '../types'
+import { GET_PAGE_TITLE, DEFAULT_COUNTRY } from '../types'
  
 const initialState = {
     infos : {
-        title : 'Home'
+        title : 'Daily update',
+        countryCode : 'UK'
     }
 }
 
@@ -17,6 +18,16 @@ export default function (state = initialState, action){
                 }
                 
             }
+
+        case DEFAULT_COUNTRY:
+                return {
+                    ...state,
+                    infos : {
+                        ...state.infos,
+                        countryCode : action.payload
+                    }
+                    
+                }
         
         default: return state
     }
