@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Form from 'react-bootstrap/Form';
 import { Row, Col } from 'react-bootstrap'
@@ -12,15 +12,15 @@ export default function CountrySelector() {
 
     const dispatch = useDispatch()
     const worldCountries = useSelector(state => state.worldCountries)
-    const infos = useSelector(state => state.app.infos)
+    const { countryCode, title } = useSelector(state => state.app.infos)
     
     useEffect(() => {
 
         dispatch(fetchWorldCountries());
-        dispatch(fetchCountryData(infos.countryCode));
-        dispatch(fetchCountryVaccination(infos.countryCode))
+        dispatch(fetchCountryData(countryCode));
+        dispatch(fetchCountryVaccination(countryCode))
 
-    }, [])
+    }, [dispatch, countryCode])
 
     const countriesList = worldCountries.loading ? <option>Loading...</option> : worldCountries.countries.map((c,key)=> {
                 
@@ -42,15 +42,15 @@ export default function CountrySelector() {
     return (
         <div className='counter-selector-container'>
             <Row>
-                <h2>{infos.title}</h2>
+                <h2>{title}</h2>
             </Row>
             <hr />
             <Row>
                 <Col xs={6} md={4}>
-                    <Form.Label htmlFor="country"><b>{infos.title} in :</b></Form.Label>
+                    <Form.Label htmlFor="country"><b>{title} in :</b></Form.Label>
                 </Col>
                 <Col xs={6} md={4}>
-                    <Form.Select id="countries__list" value={infos.countryCode} onChange={fetchCountryDetails} aria-label="Country">
+                    <Form.Select id="countries__list" value={countryCode} onChange={fetchCountryDetails} aria-label="Country">
                         {countriesList}
                     </Form.Select>
                 </Col>

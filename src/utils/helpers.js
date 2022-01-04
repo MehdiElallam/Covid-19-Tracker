@@ -18,8 +18,8 @@ const helpers = {
     currentDate : function(month){
         
         const today = new Date();
-        const day = String(today.getDate());
-        const dd = day > 1 ? day - 1 : day;
+        today.setDate(today.getDate() - 1);
+        const dd = String(today.getDate());
         const mm = String(today.getMonth() + 1);
         const yyyy = today.getFullYear().toString().substr(-2);
             
@@ -28,9 +28,8 @@ const helpers = {
     dateByMonth : function(mm){
         
         const today = new Date();
-        const day = String(today.getDate());
-        const dd = day > 1 ? day - 1 : day;
-        // const mm = String(today.getMonth() + 1);
+        today.setDate(today.getDate() - 1);
+        const dd = String(today.getDate());
         const yyyy = today.getFullYear().toString().substr(-2);
             
         return mm + '/' + dd + '/' + yyyy

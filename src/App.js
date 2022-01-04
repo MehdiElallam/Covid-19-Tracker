@@ -18,7 +18,7 @@ function App() {
   
   useEffect(() => {
       dispatch(fetchCountryHistorical(countryCode));
-  }, [])
+  }, [dispatch, countryCode])
 
 
   return (

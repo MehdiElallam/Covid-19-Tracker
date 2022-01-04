@@ -9,7 +9,7 @@ import helpers from '../utils/helpers'
 export default function Vaccinations() {
 
     const dispatch = useDispatch();
-    const vaccinationDetails = useSelector(state => state.vaccinationDetails)    
+    const { vaccination : { timeline }, loading  } = useSelector(state => state.vaccinationDetails)    
     const [vaccination, setVaccination] = useState({})
     const [firstDose, setFirstDose] = useState(0)
     const [secondDose, setSecondDose] = useState(0)
@@ -21,20 +21,24 @@ export default function Vaccinations() {
         
         dispatch(changePageTitle('Vaccinations'))
         
-        if(!vaccinationDetails.loading){
-            setVaccination(vaccinationDetails.vaccination.timeline)
-            setVaccination(vaccinationDetails.vaccination.timeline)
-            setFirstDose(parseInt(vaccinationDetails.vaccination.timeline[currentDate] / 2.5)) 
-            setSecondDose(parseInt(vaccinationDetails.vaccination.timeline[currentDate] / 3 ))
-            setThirddDose(parseInt(vaccinationDetails.vaccination.timeline[currentDate] / 6))
+        if(!loading){
+            console.log(currentDate)
+
+            setVaccination(timeline)
+            setVaccination(timeline)
+            
+            setFirstDose(parseInt(timeline[currentDate] / 2.5)) 
+            setSecondDose(parseInt(timeline[currentDate] / 3 ))
+            setThirddDose(parseInt(timeline[currentDate] / 6))
         }
 
-    }, [vaccinationDetails.vaccination])
+
+    }, [dispatch, loading, timeline, currentDate])
 
 
     return (
         
-        vaccinationDetails.loading ? <p className="text-center">Loading...</p> :
+        loading ? <p className="text-center">Loading...</p> :
         <>
             <Row>
                 <Col xs={6} md={4}>

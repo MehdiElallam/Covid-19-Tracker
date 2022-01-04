@@ -22,7 +22,7 @@ export default function Cases() {
         !countryDetails.historicalLoading && setTrendMonth(Math.max(...Object.values(countryDetails.country.historical.timeline.cases)))
 
  
-    }, [countryDetails])
+    }, [dispatch, countryDetails])
     
     
     return (

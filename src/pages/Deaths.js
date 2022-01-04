@@ -7,7 +7,7 @@ import { changePageTitle } from '../redux/actions/appInfos'
 
 export default function Deaths() {
 
-    const {country, countryLoading} = useSelector(state => state.countryDetails)
+    const {country : { total } , countryLoading} = useSelector(state => state.countryDetails)
     const [dailyDeaths, setDailyDeaths] = useState(0)
     const [totalDeaths, setTotalDeaths] = useState(0)
     const dispatch = useDispatch();
@@ -16,10 +16,10 @@ export default function Deaths() {
     useEffect(() => {
         dispatch(changePageTitle('Deaths'))
         if(!countryLoading){
-            setDailyDeaths(country.total.todayDeaths)
-            setTotalDeaths(country.total.deaths)
+            setDailyDeaths(total.todayDeaths)
+            setTotalDeaths(total.deaths)
         }
-    }, [country])
+    }, [dispatch, total, countryLoading])
 
 
     return (

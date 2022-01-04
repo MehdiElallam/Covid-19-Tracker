@@ -10,7 +10,7 @@ export default function Home() {
     
     const dispatch = useDispatch();
 
-    const { country, countryLoading } = useSelector(state => state.countryDetails)
+    const { country : { total }, countryLoading } = useSelector(state => state.countryDetails)
     const [Deaths, setDeaths] = useState(0)
     const [activeCases, setActiveCases] = useState(0)
     const [recovered, setRecovered] = useState(0)
@@ -20,12 +20,12 @@ export default function Home() {
         dispatch(changePageTitle('Daily update'))
 
         if(!countryLoading){
-            setDeaths(country.total.deaths)
-            setActiveCases(country.total.active)
-            setRecovered(country.total.recovered)
-            setTests(country.total.tests)
+            setDeaths(total.deaths)
+            setActiveCases(total.active)
+            setRecovered(total.recovered)
+            setTests(total.tests)
         }
-    }, [country])
+    }, [dispatch, countryLoading, total])
 
     return (
         <Container>
